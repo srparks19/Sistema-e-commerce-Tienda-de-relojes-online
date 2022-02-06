@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpet</title>
+
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <style type="text/css">
+        :root{
+            --main-header-color:linear-gradient(45deg,#002270,#4f7be0)
+        }
+        body,html{
+            margin: 0;
+            padding: 0;
+            background-color: #fefefe;
+        }
+        header{
+            height: 40px;
+            padding: 10px;
+            width: calc(100% - 20px);
+            line-height: 40px;
+            display: flex;
+            background: var(--main-header-color);
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 0 0 8px 3px #ccc;
+        }
+        .logo-place{
+            width: 150px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 0px;
+        }
+        .logo-place img{
+            width: 60%;
+        }
+        .search-place{
+            width: calc(100% - 440px);
+            display: flex;
+            padding: 0px;
+        }
+        .search-place{
+            padding: 0px;
+            font-size: 15px;
+            background-color: var(--main-header-color);
+            border: 1px solid var(--main-header-color);
+            width: calc(100% - 40px);    
+            font-family: 'Montserrat', sans-serif;
+        }
+        .search-place input{
+            background-color: #fefefe;  
+        }
+        .search-place input:placeholder{
+            color: #ccc; 
+        }
+        .btn-main{
+            padding: 10px;
+            font-size: 15px;
+            background-color: #fefefe;
+            border-style: none;
+            border: 1px solid var(--main-header-color);
+            cursor: pointer;
+        }
+        .btn-search{
+            width: 40px;
+        }
+        .options-place{
+            width: 250px;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .item-option{
+            padding: 5px 10px;
+            line-height: 30px;
+            font-size: 30px;
+            cursor: pointer;
+            color: #fff;
+        }
+        .main-content{
+            margin-top: 60px;
+            width: 100%;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .content-page{
+            margin: auto;
+            padding: 10px;
+            width: calc(100% - 20px);
+            max-width: 1180px;
+        }
+        .title-section{
+            padding: 10px 0px;
+            font-size: 20px;
+            color: #aaa;
+        }
+        .product-list{
+            display: table;
+            width: 100%;
+        }
+        .product-box{
+            display: inline-table;
+            padding: 10px;
+            width: calc(100%/5 - 20px);
+        }
+        .product-box a{
+            text-decoration: none;
+        }
+        .product{
+            width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 0 8px 3px #ccc;
+            background-color: #fff;
+        }
+        .product img{
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+        .detail-title{
+            text-align: center;
+            font-size: 18px;
+            color: #999;
+            width: calc(100% - 10px);
+        }
+        .detail-description{
+            text-align: center;
+            font-size: 14px;
+            color: #999;
+            padding: 5px;
+            width: calc(100% - 10px);
+        }
+        .detail-price{
+            text-align: center;
+            font-size: 25px;
+            color: #d86a6a;
+            padding: 5px;
+            width: calc(100% - 10px);
+        }
+        .detail-price span{
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-place"><img src="assets/logo.png"></div>
+        <div class="search-place">
+            <input class="search-place" type="text" id="idbusqueda" placeholder="Busca el reloj de tus sueños">
+            <button class="btn-main btn-search"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </div>
+        <div class="options-place">
+            <div class="item-option" title="Registrarse"><i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
+            <div class="item-option" title="Iniciar sesion"><i class="fa fa-sign-in" aria-hidden="true"></i></div>
+            <div class="item-option" title="Carrito de compras"><i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+        </div>
+    </header>
+    <div class="main-content">
+        <div class="content-page">
+            <div class="title-section">Productos destacados</div>
+            <div class="product-list">
+                <div class="product-box">
+                    <a href="">
+                        <div class="product">
+                            <img src="assets/reloj1.jpg">
+                            <div class="detail-title">Reloj perpetuo</div>
+                            <div class="detail-description">Reloj perpetuo con calendario</div>
+                            <div class="detail-price">$ 14.<span>99</span></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="product-box">
+                    <a href="">
+                        <div class="product">
+                            <img src="assets/reloj1.jpg">
+                            <div class="detail-title">Reloj perpetuo</div>
+                            <div class="detail-description">Reloj perpetuo con calendario</div>
+                            <div class="detail-price">$ 14.<span>99</span></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="product-box">
+                    <a href="">
+                        <div class="product">
+                            <img src="assets/reloj1.jpg">
+                            <div class="detail-title">Reloj perpetuo</div>
+                            <div class="detail-description">Reloj perpetuo con calendario</div>
+                            <div class="detail-price">$ 14.<span>99</span></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="product-box">
+                    <a href="">
+                        <div class="product">
+                            <img src="assets/reloj1.jpg">
+                            <div class="detail-title">Reloj perpetuo</div>
+                            <div class="detail-description">Reloj perpetuo con calendario</div>
+                            <div class="detail-price">$ 14.<span>99</span></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="product-box">
+                    <a href="">
+                        <div class="product">
+                            <img src="assets/reloj1.jpg">
+                            <div class="detail-title">Reloj perpetuo</div>
+                            <div class="detail-description">Reloj perpetuo con calendario</div>
+                            <div class="detail-price">$ 14.<span>99</span></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="product-box">
+                    <a href="">
+                        <div class="product">
+                            <img src="assets/reloj1.jpg">
+                            <div class="detail-title">Reloj perpetuo</div>
+                            <div class="detail-description">Reloj perpetuo con calendario</div>
+                            <div class="detail-price">$ 14.<span>99</span></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="product-box">
+                    <a href="">
+                        <div class="product">
+                            <img src="assets/reloj1.jpg">
+                            <div class="detail-title">Reloj perpetuo</div>
+                            <div class="detail-description">Reloj perpetuo con calendario</div>
+                            <div class="detail-price">$ 14.<span>99</span></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
