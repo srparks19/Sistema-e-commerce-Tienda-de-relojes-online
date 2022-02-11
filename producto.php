@@ -28,11 +28,25 @@
     </header>
     <div class="main-content">
         <div class="content-page">
+            <section>
+                <div class="part1">
+                    <img id="idimg" src="assets/reloj2.jpg">
+                </div>
+                <div class="part2">
+                    <h2 id="idtitle">NOMBRE PRINCIPAL</h2>
+                    <h1 id="idprice">S/. 35. <span>99</span></h1>
+                    <h3 id="iddescription">Descripcion del producto</h3>
+                    <button>Comprar</button>
+                </div>
+            </section>
             <div class="title-section">Productos destacados</div>
             <div class="product-list" id="space-list">
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        var p='<?php echo $_GET["p"]; ?>';
+    </script>
     <script type="text/javascript">
         $(document).ready(function(){
             $.ajax({
@@ -43,9 +57,15 @@
                     let html='';
                     console.log(data)
                     for(var i = 0; i < data.datos.length; i++){
+                        if(data.datos[i].codpro==p){
+                            document.getElementById("idimg").src=data.datos[i].rutimapro;
+                            document.getElementById("idtitle").innerHTML=data.datos[i].nompro;
+                            document.getElementById("idprice").innerHTML=data.datos[i].prepro;
+                            document.getElementById("iddescription").innerHTML=data.datos[i].despro;
+                        }
                         html+=
                         '<div class="product-box">'+
-                            '<a href="">'+
+                            '<a href="producto.php?p=' + data.datos[i].codpro + '">'+
                                 '<div class="product">'+
                                     '<img src="' + data.datos[i].rutimapro +'">'+
                                     '<div class="detail-title">' + data.datos[i].nompro +'</div>'+

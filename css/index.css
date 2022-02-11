@@ -1,5 +1,6 @@
 :root{
-    --main-header-color:linear-gradient(45deg,#002270,#4f7be0)
+    --main-header-color:linear-gradient(45deg,#002270,#4f7be0);
+    --main-red:#c71212;
 }
 body,html{
     margin: 0;
@@ -73,12 +74,61 @@ header{
     margin-top: 60px;
     width: 100%;
     font-family: 'Montserrat', sans-serif;
+    background: #f3f3f3;
 }
 .content-page{
     margin: auto;
     padding: 10px;
     width: calc(100% - 20px);
     max-width: 1180px;
+}
+.content-page section{
+    display: flex;
+    background: #fff;
+}
+.part2 button{
+    border-style: none;
+    border-radius: 15px;
+    padding: 13px 20px;
+    color: #fff;
+    background: #002270;
+    cursor: pointer;
+    font-size: 16px;
+}
+.part1{
+    padding: 5px;
+    width: calc(60% - 10px);
+}
+.part1 img{
+    width: 400px;
+    height: 430px;
+    border-radius: 10px 10px 10px 10px;
+
+}
+.part2{
+    padding: 5px;
+    width: calc(40% - 10px);
+    margin: 20px 0;
+}
+.part2 *{
+	margin: 10px 0;
+	font-family: 'Montserrat', sans-serif;
+}
+.part2 h2{
+	color: #444;
+	font-size: 30px;
+}
+.part2 h1{
+	color: var(--main-red);
+	font-size: 45px;
+}
+.part2 h1 span{
+	color: #c71212;
+	font-size: 30px;
+}
+.part2 h3{
+	color: #333;
+	font-weight: normal;
 }
 .title-section{
     padding: 10px 0px;
