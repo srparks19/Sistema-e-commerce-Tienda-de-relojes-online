@@ -1,6 +1,6 @@
 :root{
-	--main-header-color:linear-gradient(45deg,#ef971e,#ffbc6a);
-	--main-red:#c71212;
+	--main-header-color:linear-gradient(45deg,#002270,#4f7be0);
+    --main-red:#c71212;
 }
 *{
 	font-family: 'Sen', sans-serif;
@@ -30,7 +30,8 @@ header{
 	margin-top: 7px;
 }
 .logo-place img{
-	width: 100%;
+	width: 80px;
+	height: 40px;
 }
 .search-place{
 	width: calc(100% - 440px);
@@ -182,7 +183,8 @@ button{
 }
 .product img{
 	width: 100%;
-	border-radius: 10px 10px 0 0;
+    height: 230px;
+    border-radius: 10px 10px 0 0;
 }
 .detail-title{
 	padding: 5px;
