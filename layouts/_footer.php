@@ -12,6 +12,6 @@
 				<a href="" target="_blank">Whatsapp: 999 888 777</a>
 			</div>
 		</div>
-		<center><h5>Pepert - Derechos reservador 2022</h5></center>
+		<center><h5>Perpet - Derechos reservador 2021</h5></center>
 	</div>
 </footer>

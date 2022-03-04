@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Perpet - producto</title>
+	<title>Perpet - busqueda</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
@@ -16,18 +16,7 @@
 	<?php include("layouts/_main-header.php"); ?>
 	<div class="main-content">
 		<div class="content-page">
-			<section>
-				<div class="part1">
-					<img id="idimg" src="assets/products/crepe.jpg">
-				</div>
-				<div class="part2">
-					<h2 id="idtitle">NOMBRE PRINCIPAL</h2>
-					<h1 id="idprice">S/. 35.<span>99</span></h1>
-					<h3 id="iddescription">Descripcion del producto</h3>
-					<button onclick="iniciar_compra()">Comprar</button>
-				</div>
-			</section>
-			<div class="title-section">Productos destacados</div>
+			<div class="title-section">Resultados para <strong>"<?php echo $_GET['text']; ?>"</strong></div>
 			<div class="products-list" id="space-list">
 			</div>
 		</div>
@@ -35,24 +24,18 @@
 	<?php include("layouts/_footer.php"); ?>
 	<script type="text/javascript" src="js/main-scripts.js"></script>
 	<script type="text/javascript">
-		var p='<?php echo $_GET["p"]; ?>';
-	</script>
-	<script type="text/javascript">
+		var text="<?php echo $_GET['text']; ?>";
 		$(document).ready(function(){
 			$.ajax({
-				url:'servicios/producto/get_all_products.php',
+				url:'servicios/producto/get_all_results.php',
 				type:'POST',
-				data:{},
+				data:{
+					text:text
+				},
 				success:function(data){
 					console.log(data);
 					let html='';
 					for (var i = 0; i < data.datos.length; i++) {
-						if (data.datos[i].codpro==p) {
-							document.getElementById("idimg").src=data.datos[i].rutimapro;
-							document.getElementById("idtitle").innerHTML=data.datos[i].nompro;
-							document.getElementById("idprice").innerHTML=formato_precio(data.datos[i].prepro);
-							document.getElementById("iddescription").innerHTML=data.datos[i].despro;
-						}
 						html+=
 						'<div class="product-box">'+
 							'<a href="producto.php?p='+data.datos[i].codpro+'">'+
@@ -65,7 +48,11 @@
 							'</a>'+
 						'</div>';
 					}
-					document.getElementById("space-list").innerHTML=html;
+					if (html=='') {
+						document.getElementById("space-list").innerHTML="No hay resultados";
+					}else{
+						document.getElementById("space-list").innerHTML=html;
+					}
 				},
 				error:function(err){
 					console.error(err);
@@ -77,32 +64,6 @@
 			let svalor=valor.toString();
 			let array=svalor.split(".");
 			return "$ "+array[0]+".<span>"+array[1]+"</span>";
-		}
-		function iniciar_compra(){
-			$.ajax({
-				url:'servicios/compra/validar_inicio_compra.php',
-				type:'POST',
-				data:{
-					codpro:p
-				},
-				success:function(data){
-					console.log(data);
-					if (data.state) {
-						alert(data.detail);
-					}else{
-						alert(data.detail);
-						if (data.open_login) {
-							open_login();
-						}
-					}
-				},
-				error:function(err){
-					console.error(err);
-				}
-			});
-		}
-		function open_login(){
-			window.location.href="login.php";
 		}
 	</script>
 </body>

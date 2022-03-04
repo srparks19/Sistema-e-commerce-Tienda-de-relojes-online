@@ -1,2 +1,2 @@
-# Sistema-e-commerce-Tienda-de-relojes-online
-Sistema e-commerce, Tienda de relojes online proyecto software 2
+# sistema-de-ecommerce---punto-y-coma
+Tu primer web E-Commerce desde cero! PHP + MYSQL con XAMPP
